@@ -8,7 +8,6 @@ export default function Nav() {
             <Link to='/' className="home"><IconButton aria-label="home"><Home /></IconButton></Link>
             <Link to='/tiles' className="tilelist">All Tiles</Link>
             <Link to='/tasks' className="tasklist">All Tasks</Link>
-            <Link to='/demo' className="Example">Example</Link>
         </nav>
     )
 }

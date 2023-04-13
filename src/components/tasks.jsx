@@ -6,6 +6,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { BookmarkRounded } from '@mui/icons-material';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
 
@@ -41,15 +42,15 @@ export default function Tasks() {
   }
 
   return (
-    <section>
-      <select value={selType} onChange={e => setType(e.target.value)}>
+    <section className='task-page'>
+      <select className='type-scroll' value={selType} onChange={e => setType(e.target.value)}>
         {types.map(type => (
           <option value={type}>{type}</option>
         ))}
       </select>
-      <Carousel NavButton={({onClick, style, next, prev}) => {
+      <Carousel NavButton={({onClick, next, prev}) => {
         return (
-          <Button onClick={onClick} className="navigation" style={style}>
+          <Button onClick={onClick} className="navigation">
             {next && "next"}
             {prev && "previous"}
           </Button>
@@ -83,6 +84,9 @@ export default function Tasks() {
                 <Button size="small" color="primary">
                   Edit
                 </Button>
+                <div className='tag'><Typography variant="overline" color="text.secondary">
+                    <BookmarkRounded sx={{ fontSize: 15}}/>{t.type} 
+                  </Typography></div>
               </CardActions>
             </Card>
             </section>
