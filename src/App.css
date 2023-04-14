@@ -10,7 +10,8 @@
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
   padding-top: 15px;
   align-items: center;
 }
@@ -33,3 +34,31 @@ nav {
   margin-left: auto;
   margin-right: 0;
 }
+
+.buttons {
+  margin-top: 100px;
+}
+
+.dropdown {
+  display: flex;
+  margin: 0 auto;
+
+}
+form {
+  font-family: 'Poppins';
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction:column;
+  outline: dashed 2px black;
+  max-width: 300px;
+  padding: 20px;
+  row-gap: 10px;
+  gap: 10px;
+  text-align: right;  
+}
+
+input {
+  margin-left: 10px;
+}
+

@@ -17,7 +17,7 @@ export default function Tiles() {
     axios.get('https://pre-interview.onrender.com/tiles')
       .then(res => {
         const sortedDate = res.data.sort((a, b) => new Date(b.launch_date) - new Date(a.launch_date));
-        // console.log(res.data)
+        console.log(res.data)
         setTiles(sortedDate);
       })
   }, []);

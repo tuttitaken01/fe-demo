@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import AddTask from './task_post';
+
 import Carousel from 'react-material-ui-carousel';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { BookmarkRounded } from '@mui/icons-material';
+import { BookmarkRounded, ArrowBack, ArrowForward } from '@mui/icons-material';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
 
@@ -48,12 +50,15 @@ export default function Tasks() {
           <option value={type}>{type}</option>
         ))}
       </select>
+      <button>Add</button>
       <Carousel NavButton={({onClick, next, prev}) => {
         return (
+          <div className='buttons'>
           <Button onClick={onClick} className="navigation">
-            {next && "next"}
-            {prev && "previous"}
+            {next && <ArrowForward/>}
+            {prev && <ArrowBack />}
           </Button>
+          </div>
         )
       }}
       >
@@ -65,8 +70,8 @@ export default function Tasks() {
                 <CardMedia
                   component="img"
                   height="140"
-                  image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
-                  alt="green iguana"
+                  image={t.img}
+                  alt="images"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -93,6 +98,8 @@ export default function Tasks() {
           )
         })}
       </Carousel>
+      <br />
+      <AddTask />
     </section>
   )
 }
